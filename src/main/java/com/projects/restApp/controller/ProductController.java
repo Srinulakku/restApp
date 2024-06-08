@@ -25,8 +25,20 @@ public class ProductController
         return service.getProductById(prodId);
     }
 
-    @PutMapping("/addProduct")
+    @PostMapping("/addProduct")
     public Product addProduct(@RequestBody Product prod){
         return service.addProduct(prod);
     }
+
+    @PutMapping("/updateProduct")
+    public Product updateProduct(@RequestBody Product product){
+        return service.updateProduct(product);
+    }
+
+    @DeleteMapping("/deleteProduct/{prodId}")
+    public Product deleteProduct(@PathVariable int prodId){
+        return service.deleteProductById(prodId);
+    }
+
+
 }
